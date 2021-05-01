@@ -65,4 +65,6 @@ export const TextInput = styled.input`
   padding: 24px 0 24px;
   background: #ffffff66;
   background-color: #25273c;
+
+  caret-color: #72bef8;
 `;
