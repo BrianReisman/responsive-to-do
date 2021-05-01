@@ -1,33 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import {
-  Task,
-  TaskText,
-  Close,
   DisplayRoot,
   EmptyMessageText,
   EmptyMessageContainer,
-  Dashboard,
-  ItemsLeft,
-  Filter,
-  FilterOption,
-  ClearCompleted,
+  Task,
+  Close,
+  TaskText,
 } from "./Display.elements";
+import Dashboard from "./Dashboard/Dashboard";
 
 const Display = (props) => {
-  const [activeFilter, setActiveFilter] = useState("all");
-
-  // const tasks = props.tasks;
-  // console.log(tasks.forEach((task) => task));
-  // const asdfasdf = props.tasks.map((task) => {
-  //   return (
-  //     <Task>
-  //       <input type="checkbox" name="" id="" />
-  //       <TaskText>{task.task}</TaskText>
-  //       <Close />
-  //     </Task>
-  //   );
-  // });
-  // console.log(typeof asdfasdf)
+  const TasksToRender = props.tasks.map((task) => {
+    console.log()
+    return (
+      <Task>
+        <input type="checkbox" name="" id={task.id} onClick={props.toggleTaskCompleted} />
+        <TaskText>{task.task}</TaskText>
+        <Close />
+      </Task>
+    );
+  });
 
   const noTasks = (
     <EmptyMessageContainer>
@@ -38,49 +30,11 @@ const Display = (props) => {
     </EmptyMessageContainer>
   );
 
-  const clearHandler = () => {
-    console.log("clearHandler");
-  };
-
-  const filterHandler = (e) => {
-    setActiveFilter(e.target.id);
-  };
-
-  const dashboard = (
-    <Dashboard>
-      <ItemsLeft>{2 * 3} items left</ItemsLeft>
-      <Filter>
-        <FilterOption
-          className={activeFilter === "all" ? "active" : null}
-          onClick={filterHandler}
-          id="all"
-        >
-          All
-        </FilterOption>
-        <FilterOption
-          className={activeFilter === "active" ? "active" : null}
-          onClick={filterHandler}
-          id="active"
-        >
-          Active
-        </FilterOption>
-        <FilterOption
-          className={activeFilter === "completed" ? "active" : null}
-          onClick={filterHandler}
-          id="completed"
-        >
-          Completed
-        </FilterOption>
-      </Filter>
-      <ClearCompleted onClick={clearHandler}>Clear Completed</ClearCompleted>
-    </Dashboard>
-  );
-
   return (
     <DisplayRoot>
       {noTasks}
-      {/* {Tasks} */}
-      {dashboard}
+      {TasksToRender}
+      <Dashboard />
     </DisplayRoot>
   );
 };

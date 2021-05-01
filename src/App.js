@@ -6,20 +6,32 @@ import img from "./assets/images/bg__trees.png";
 import Form from "./components/Form/Form";
 import Display from "./components/Display/Display";
 
-const seedTasks = [{
-      id: uuid(),
-      task: "seed task",
-      completed: false,
-    },
-    {
-      id: uuid(),
-      task: "seed task2**",
-      completed: false,
-    },]
+const seedTasks = [
+  {
+    id: uuid(),
+    task: "seed task",
+    completed: false,
+  },
+  {
+    id: uuid(),
+    task: "seed task2**",
+    completed: false,
+  },
+];
 
-    function App() {
+function App() {
   const [tasks, setTasks] = useState([...seedTasks]);
-console.log(tasks.map(task => 3))
+  console.log("tasks", tasks);
+
+  const toggleTaskCompleted = (e) => {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === e.target.id) {
+        return { ...task, completed: !task.completed };
+      } else return task;
+    });
+
+    setTasks(updatedTasks);
+  };
 
   return (
     <Root>
@@ -27,7 +39,11 @@ console.log(tasks.map(task => 3))
         <Container>
           <Title>TODO</Title>
           <Form setTasks={setTasks} tasks={tasks} />
-          <Display setTasks={setTasks} tasks={tasks} />
+          <Display
+            setTasks={setTasks}
+            tasks={tasks}
+            toggleTaskCompleted={toggleTaskCompleted}
+          />
         </Container>
       </BackgroundImg>
     </Root>
