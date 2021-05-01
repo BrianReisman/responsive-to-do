@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// import emptyCheck from "../../assets/images/";
 
 //*Form
 export const FormRoot = styled.form`
@@ -66,5 +65,5 @@ export const TextInput = styled.input`
   background: #ffffff66;
   background-color: #25273c;
 
-  caret-color: #72bef8;
+  /* caret-color: #72bef8; */
 `;
