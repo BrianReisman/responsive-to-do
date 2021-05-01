@@ -7,7 +7,7 @@ import {
   CheckboxLabel,
   TextInput,
   TextInputLabel,
-} from "./Form.elements.js";
+} from "./Form.elements";
 
 const Form = (props) => {
   const [input, setInput] = useState("");
