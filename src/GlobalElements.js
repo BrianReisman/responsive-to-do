@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import img from "./assets/images/bg__trees.png";
-import emptyCheck from "./assets/images/empty_check.svg";
 // import check from './assets/images/icon__check.svg'
 // import close from './assets/images/icon__close.svg'
 
@@ -9,12 +8,14 @@ export const Root = styled.div`
   height: 100vh;
   * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
 `;
 
 export const BackgroundImg = styled.div`
-  z-index: -10;
+  padding-top: 88px;
+  z-index: -1;
   background-image: linear-gradient(
       131.73deg,
       rgba(114, 190, 248, 0.8) 14.46%,
@@ -28,7 +29,7 @@ export const BackgroundImg = styled.div`
 `;
 
 export const Container = styled.div`
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 
   /* position: relative; */
   /* top: 152px; */
@@ -39,7 +40,6 @@ export const Container = styled.div`
 export const Title = styled.h1`
   /* border: 1px solid red; */
 
-  margin-top: 88px;
   margin-bottom: 20px;
   color: #ffffff;
   height: 44px;
@@ -51,58 +51,4 @@ export const Title = styled.h1`
   line-height: 44px;
   letter-spacing: 0.25em;
   text-align: left;
-`;
-
-export const TextInput = styled.input`
-  border: none;
-  /* border: 3px solid black; */
-  /* max-width: 800px; */
-
-  width: 800px;
-  border-radius: 7px;
-  font-family: Verdana;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0em;
-  text-align: left;
-  padding: 24px 0 24px;
-  background: #ffffff66;
-  background-color: #25273c;
-`;
-
-export const Form = styled.form`
-  background: #ffffff66;
-  background-color: #25273c;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-export const Checkbox = styled.input`
-  /* width: 100px; */
-  display: none;
-`;
-
-export const Label = styled.label`
-  position: relative;
-  ::before {
-    content: "";
-    background: url(${emptyCheck});
-    background-position: center;
-    background-size: contain;
-    width: 26px;
-    height: 26px;
-    position: absolute;
-    left: -44px;
-    top: -8px;
-  }
-  ::after{
-    content: '';
-    border: 1px solid white;
-    width: 26px;
-    height: 26px;
-    position: absolute;
-    border-radius: 50%;
-
-  }
 `;
