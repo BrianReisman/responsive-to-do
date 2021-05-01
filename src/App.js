@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { v4 as uuid } from "uuid";
+// import { v4 as uuid } from "uuid";
 
 import { Root, BackgroundImg, Container, Title } from "./GlobalElements";
 import img from "./assets/images/bg__trees.png";
@@ -21,7 +21,6 @@ const seedTasks = [
 
 function App() {
   const [tasks, setTasks] = useState([...seedTasks]);
-  console.log("tasks", tasks);
 
   const toggleTaskCompleted = (e) => {
     const updatedTasks = tasks.map((task) => {
@@ -29,7 +28,6 @@ function App() {
         return { ...task, completed: !task.completed };
       } else return task;
     });
-
     setTasks(updatedTasks);
   };
 

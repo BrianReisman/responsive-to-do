@@ -11,10 +11,15 @@ import Dashboard from "./Dashboard/Dashboard";
 
 const Display = (props) => {
   const TasksToRender = props.tasks.map((task) => {
-    console.log()
+    console.log();
     return (
-      <Task>
-        <input type="checkbox" name="" id={task.id} onClick={props.toggleTaskCompleted} />
+      <Task key={task.id}>
+        <input
+          type="checkbox"
+          name=""
+          id={task.id}
+          onClick={props.toggleTaskCompleted}
+        />
         <TaskText>{task.task}</TaskText>
         <Close />
       </Task>
@@ -35,7 +40,6 @@ const Display = (props) => {
       {props.tasks.length === 0 ? noTasks : null}
       {TasksToRender}
       {props.tasks.length === 0 ? null : <Dashboard />}
-      
     </DisplayRoot>
   );
 };

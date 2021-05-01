@@ -9,12 +9,10 @@ export const DashboardRoot = styled.div`
 
   color: #ffffff40;
 `;
-
 export const ItemsLeft = styled.p`
   /* background-color: red; */
 `;
-
-export const Filter = styled.p`
+export const Filter = styled.div`
   display: flex;
   /* background-color: red; */
   .active {
@@ -31,7 +29,6 @@ export const FilterOption = styled.p`
   }
   /* background-color: blue; */
 `;
-
 export const ClearCompleted = styled.p`
   cursor: default;
   /* background-color: green; */
