@@ -14,12 +14,8 @@ import {
 } from "./Display.elements";
 
 const Display = (props) => {
-  const [activeFilter, setActiveFilter] = useState({
-    all: true,
-    active: false,
-    completed: false,
-  });
-  console.log(activeFilter);
+  const [activeFilter, setActiveFilter] = useState("all");
+
   // const tasks = props.tasks;
   // console.log(tasks.forEach((task) => task));
   // const asdfasdf = props.tasks.map((task) => {
@@ -47,15 +43,7 @@ const Display = (props) => {
   };
 
   const filterHandler = (e) => {
-    const newActive = {
-      all: e.target.id === "all" ? true : false,
-      active: e.target.id === "active" ? true : false,
-      completed: e.target.id === "completed" ? true : false,
-    };
-    setActiveFilter(newActive);
-    // className = "";
-    // console.log(e.target);
-    // e.target.className = "active"; //
+    setActiveFilter(e.target.id);
   };
 
   const dashboard = (
@@ -63,21 +51,21 @@ const Display = (props) => {
       <ItemsLeft>{2 * 3} items left</ItemsLeft>
       <Filter>
         <FilterOption
-          className={activeFilter.all ? "active" : null}
+          className={activeFilter === "all" ? "active" : null}
           onClick={filterHandler}
           id="all"
         >
           All
         </FilterOption>
         <FilterOption
-          className={activeFilter.active ? "active" : null}
+          className={activeFilter === "active" ? "active" : null}
           onClick={filterHandler}
           id="active"
         >
           Active
         </FilterOption>
         <FilterOption
-          className={activeFilter.completed ? "active" : null}
+          className={activeFilter === "completed" ? "active" : null}
           onClick={filterHandler}
           id="completed"
         >
