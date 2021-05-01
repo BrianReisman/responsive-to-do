@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { v4 as uuid } from "uuid";
+
 import {
   FormRoot,
   Checkbox,
   CheckboxLabel,
   TextInput,
   TextInputLabel,
-} from "./Form.Elements.js";
+} from "./Form.elements.js";
 
 const Form = (props) => {
   const [input, setInput] = useState("");
@@ -16,7 +18,15 @@ const Form = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    alert(`You created a task called: ${input}`);
+
+    const taskObj = {
+      id: uuid(),
+      task: input,
+      completed: false,
+    };
+
+    props.setTasks([...props.tasks, taskObj]);
+
     setInput("");
   };
 
@@ -27,6 +37,7 @@ const Form = (props) => {
       </CheckboxLabel>
       <TextInputLabel htmlFor="task-text">
         <TextInput
+          placeholder="Create a new item..."
           type="text"
           id="task-text"
           onChange={changeHandler}

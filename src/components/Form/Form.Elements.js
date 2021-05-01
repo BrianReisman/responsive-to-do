@@ -5,12 +5,14 @@ import styled from "styled-components";
 export const FormRoot = styled.form`
   /* border: 2px solid pink; */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 800px;
   box-sizing: border-box;
   background: #ffffff66;
   background-color: #25273c;
+  border-radius: 7px;
+  margin-bottom: 72px;
 `;
 
 //* Checkbox
@@ -18,9 +20,9 @@ export const Checkbox = styled.input`
   /* width: 100px; */
   /* display: none; */
 `;
-
 /* background: url(${emptyCheck}); */
 export const CheckboxLabel = styled.label`
+  /* border: 3px solid red; */
   position: relative;
   ::before {
     content: "";
@@ -42,18 +44,18 @@ export const CheckboxLabel = styled.label`
   }
 `;
 
-
 //* Label
-export const TextInputLabel = styled.label``;
-export const TextInput = styled.input`
-  border: none;
+export const TextInputLabel = styled.label`
   /* border: 3px solid red; */
-  /* max-width: 800px; */
-color: #FFFFFF40;
-outline: none;
+`;
+export const TextInput = styled.input`
+  cursor: default;
+
+  border: none;
+  color: #ffffff40;
+  outline: none;
 
   width: 700px;
-  border-radius: 7px;
   font-family: Verdana;
   font-size: 20px;
   font-style: normal;
