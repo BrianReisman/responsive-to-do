@@ -32,9 +32,10 @@ const Display = (props) => {
 
   return (
     <DisplayRoot>
-      {noTasks}
+      {props.tasks.length === 0 ? noTasks : null}
       {TasksToRender}
-      <Dashboard />
+      {props.tasks.length === 0 ? null : <Dashboard />}
+      
     </DisplayRoot>
   );
 };

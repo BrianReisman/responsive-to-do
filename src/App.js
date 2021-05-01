@@ -7,16 +7,16 @@ import Form from "./components/Form/Form";
 import Display from "./components/Display/Display";
 
 const seedTasks = [
-  {
-    id: uuid(),
-    task: "seed task",
-    completed: false,
-  },
-  {
-    id: uuid(),
-    task: "seed task2**",
-    completed: false,
-  },
+  // {
+  //   id: uuid(),
+  //   task: "seed task",
+  //   completed: false,
+  // },
+  // {
+  //   id: uuid(),
+  //   task: "seed task2**",
+  //   completed: false,
+  // },
 ];
 
 function App() {
