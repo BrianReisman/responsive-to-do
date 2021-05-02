@@ -6,6 +6,8 @@ import {
   Task,
   Close,
   TaskText,
+  Input,
+  CheckboxLabel,
 } from "./Display.elements";
 import Dashboard from "./Dashboard/Dashboard";
 
@@ -14,12 +16,13 @@ const Display = (props) => {
     console.log();
     return (
       <Task key={task.id}>
-        <input
+        <Input
           type="checkbox"
           name=""
           id={task.id}
           onClick={props.toggleTaskCompleted}
         />
+        <CheckboxLabel htmlFor={task.id} />
         <TaskText>{task.task}</TaskText>
         <Close />
       </Task>

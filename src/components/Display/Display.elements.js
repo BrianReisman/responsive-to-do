@@ -34,11 +34,29 @@ export const EmptyMessageText = styled.p`
   border-radius: nullpx;
 `;
 export const Task = styled.div`
+  border: 2px solid green;
+
   position: relative;
   display: flex;
   align-items: center;
   background: #25273c;
   border-bottom: 1px solid #ffffff20;
+
+  label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2px solid #aaa;
+    transition: 0.5s; //this code is also in Input.
+  }
+  input:checked + label::before {
+    border: 2px solid green;
+      /* height: 50vh; */
+  }
 `;
 export const TaskText = styled.p`
   font-family: Verdana;
@@ -63,4 +81,17 @@ export const Close = styled.button`
   :hover {
     background-image: url(${closeHover});
   }
+`;
+
+export const Input = styled.input`
+  /* opacity: 0; */
+  width: 100px;
+  transition: 0.5s;
+`;
+
+export const CheckboxLabel = styled.label`
+  position: relative;
+  cursor: default;
+  display: inline-block;
+  color: #666;
 `;
