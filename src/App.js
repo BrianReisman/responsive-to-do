@@ -65,7 +65,10 @@ function App() {
           />
           {tasks.length === 0 ? null : (
             <MobileFilter>
-              <FilterComponent />
+              <FilterComponent
+                filterHandler={filterHandler}
+                activeFilter={activeFilter}
+              />
             </MobileFilter>
           )}
         </Container>

@@ -17,7 +17,6 @@ const Dashboard = ({
 
       <div className="filter">
         <FilterComponent
-          className="testtest"
           filterHandler={filterHandler}
           activeFilter={activeFilter}
         />

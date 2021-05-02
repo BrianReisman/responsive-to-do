@@ -19,16 +19,21 @@ const Form = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    const taskObj = {
-      id: uuid(),
-      task: input,
-      completed: false,
+    if(input){
+
+      const taskObj = {
+        id: uuid(),
+        task: input,
+        completed: false,
+      };
+      
+      props.setTasks([...props.tasks, taskObj]);
+      
+      setInput("");
+    } else {
+      return
+    }
     };
-
-    props.setTasks([...props.tasks, taskObj]);
-
-    setInput("");
-  };
 
   return (
     <FormRoot onSubmit={submitHandler}>

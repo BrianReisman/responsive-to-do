@@ -82,6 +82,10 @@ export const TaskText = styled.p`
   margin: 24px 0 24px 60px;
   letter-spacing: 0em;
   text-align: left;
+  /* word-wrap: break-word; */ //!handle long tasts
+  @media(max-width: 600px){
+    font-size: 16px;
+  }
 `;
 export const Close = styled.button`
   position: absolute;

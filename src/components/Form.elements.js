@@ -2,13 +2,11 @@ import styled from "styled-components";
 
 //*Form
 export const FormRoot = styled.form`
-  * {
-    /* border: 1px solid red; */
-  }
   display: flex;
   /* justify-content: space-around; */ //allows custom placing of input relative to checkbox
   align-items: center;
   box-sizing: border-box;
+  justify-content: center;
   max-width: 800px;
   background: #ffffff66;
   background-color: #25273c;
@@ -33,18 +31,19 @@ export const FormRoot = styled.form`
 
 //* Checkbox
 export const Checkbox = styled.input`
-  /* border: 3px solid red; */
   opacity: 0;
 `;
 
 export const CheckboxLabel = styled.label`
-  /* border: 3px solid red; */
-  /* position: relative; */
+/* position: relative; */
 `;
 
 //* Label
 export const TextInputLabel = styled.label`
-  /* border: 3px solid red; */
+  margin-left: 60px;
+  position: relative;
+  border-radius: 7px;
+  flex-basis: 700px;
 `;
 export const TextInput = styled.input`
   cursor: default;
@@ -52,10 +51,7 @@ export const TextInput = styled.input`
   color: #ffffff40;
   outline: none;
 
-  /* border: 2px solid pink; */
-  /* position: relative; */
-  max-width: 700px;
-
+  position: relative;
   font-family: Verdana;
   font-size: 20px;
   font-style: normal;
@@ -63,11 +59,13 @@ export const TextInput = styled.input`
   letter-spacing: 0em;
   text-align: left;
   padding: 24px 0px 24px 0px;
-  margin-left: 60px;
   background: #ffffff66;
   background-color: #25273c;
   caret-color: #72bef8;
   :focus {
     color: #ffffff;
+  }
+  @media(max-width: 600px){
+    font-size: 16px;
   }
 `;

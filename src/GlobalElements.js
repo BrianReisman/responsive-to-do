@@ -55,4 +55,7 @@ export const Title = styled.h1`
   line-height: 44px;
   letter-spacing: 0.25em;
   text-align: left;
+  @media(max-width: 600px){
+    font-size: 24px;
+  }
 `;

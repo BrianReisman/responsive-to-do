@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const DashboardRoot = styled.div`
   border: 1px solid white;
-  
+
   display: flex;
   justify-content: space-between;
   max-width: 800px;
@@ -13,7 +13,7 @@ export const DashboardRoot = styled.div`
     .filter {
       display: none;
     }
-    .filter-mobile{
+    .filter-mobile {
       display: block;
       margin: 25px;
     }
@@ -24,12 +24,14 @@ export const ItemsLeft = styled.p`
 `;
 export const Filter = styled.div`
   display: flex;
+  width: 100%;
+  justify-content: center;
   .active {
     color: #72bef8;
     padding: 0 12px;
     cursor: default;
   }
-  `;
+`;
 export const FilterOption = styled.p`
   padding: 0 12px;
   cursor: default;
@@ -52,14 +54,15 @@ export const MobileFilter = styled.div`
   max-width: 800px;
   padding: 27px 16px;
   color: #ffffff40;
-  background-color: #25273C;
+  background-color: #25273c;
   border-radius: 7px;
-
   margin-top: 24px;
-
+  .active {
+    color: #72bef8;
+    padding: 0 12px;
+    cursor: default;
+  }
   @media (min-width: 600px) {
-    /* .filter { */
-      display: none;
-    /* } */
+    display: none;
   }
 `;
