@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const DashboardRoot = styled.div`
-  border: 1px solid white;
-
   display: flex;
   justify-content: space-between;
   max-width: 800px;

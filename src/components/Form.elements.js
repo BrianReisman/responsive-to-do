@@ -44,9 +44,10 @@ export const TextInputLabel = styled.label`
   position: relative;
   border-radius: 7px;
   flex-basis: 700px;
-`;
+  `;
 export const TextInput = styled.input`
   cursor: default;
+  border-radius: 7px;
   border: none;
   color: #ffffff40;
   outline: none;
