@@ -35,7 +35,7 @@ export const EmptyMessageText = styled.p`
   border-radius: nullpx;
 `;
 export const Task = styled.div`
-  border: 2px solid green;
+  border-radius: 7px 7px 0 0; //better way to get this via container?
 
   position: relative;
   display: flex;
@@ -43,19 +43,20 @@ export const Task = styled.div`
   background: #25273c;
   border-bottom: 1px solid #ffffff20;
 
-  label::before {
-    content: "l";
-    position: absolute;
-    /* left: 16px; */
-    top: -16px;
-    width: 28px;
-    height: 28px;
-    border: 2px solid #ffffff40;
-    border-radius: 50%;
+  label {
     transition: 0.5s; //this code is also in Input.
-
-    &:hover {
-    border: 2px solid red;
+    ::before {
+      content: "";
+      position: absolute;
+      top: -16px;
+      width: 28px;
+      height: 28px;
+      border: 2px solid #ffffff40;
+      border-radius: 50%;
+      transition: 0.5s; //this code is also in Input.
+    }
+    :hover::before {
+      transition: 0.5s; //this code is also in Input.
       border-image: linear-gradient(131.73deg, #72bef8 14.46%, #a674f2 87.62%);
       border-image-slice: 1;
       border-image-width: 1px;
@@ -67,13 +68,17 @@ export const Task = styled.div`
     }
   }
   input:checked + label::before {
-    border: 2px solid green;
-    background-image: url(${check});
+    transition: 0.5s; //this code is also in Input.
+    /* border: 2px solid green; */
+    background-image: url(${check}),
+      linear-gradient(131.73deg, #72bef8 14.46%, #a674f2 87.62%);
     background-size: cover;
     /* height: 50vh; */
   }
 `;
 export const TaskText = styled.p`
+  text-decoration: ${(props) => (props.completed ? "line-through" : null)};
+  color: ${(props) => (props.completed ? "#ffffff40" : "#ffffff")};
   font-family: Verdana;
   font-size: 20px;
   font-style: normal;
@@ -82,7 +87,6 @@ export const TaskText = styled.p`
   margin: 24px 0 24px 60px;
   letter-spacing: 0em;
   text-align: left;
-  color: #ffffff;
 `;
 export const Close = styled.button`
   position: absolute;

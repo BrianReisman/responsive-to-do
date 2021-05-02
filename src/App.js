@@ -31,6 +31,17 @@ function App() {
     setTasks(updatedTasks);
   };
 
+  const deleteTask = (e) => {
+    const updatedTasks = [];
+
+    tasks.forEach((task) => {
+      if (task.id === e.target.id) updatedTasks.push();
+      else updatedTasks.push(task);
+    });
+
+    setTasks(updatedTasks);
+  };
+
   return (
     <Root>
       <BackgroundImg src={img} alt="forest landscape background">
@@ -41,6 +52,7 @@ function App() {
             setTasks={setTasks}
             tasks={tasks}
             toggleTaskCompleted={toggleTaskCompleted}
+            deleteTask={deleteTask}
           />
         </Container>
       </BackgroundImg>
