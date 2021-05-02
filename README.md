@@ -1,6 +1,8 @@
 
-google fonts to use font in wireframe
 testing
+hover stage of ::before checkbox
+[]TODO: make mobile
+
 
 duplicate svg for icon_close and change oppacity for :hover state.
 

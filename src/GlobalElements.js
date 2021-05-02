@@ -1,15 +1,16 @@
 import styled from "styled-components";
 import img from "./assets/images/bg__trees.png";
-// import check from './assets/images/icon__check.svg'
-// import close from './assets/images/icon__close.svg'
 
 export const Root = styled.div`
+  /* width: 100vw; */
+  border: 3px solid blue;
   background-color: #181824;
   height: 100vh;
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 `;
 

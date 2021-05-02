@@ -6,10 +6,10 @@ export const FormRoot = styled.form`
     /* border: 1px solid red; */
   }
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */ //allows custom placing of input relative to checkbox
   align-items: center;
   box-sizing: border-box;
-  width: 800px;
+  max-width: 800px;
   background: #ffffff66;
   background-color: #25273c;
   border-radius: 7px;
@@ -49,18 +49,21 @@ export const TextInputLabel = styled.label`
 export const TextInput = styled.input`
   cursor: default;
   border: none;
-  /* border: 2px solid pink; */
   color: #ffffff40;
   outline: none;
 
-  width: 700px;
+  border: 2px solid pink;
+  /* position: relative; */
+  max-width: 700px;
+
   font-family: Verdana;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0em;
   text-align: left;
-  padding: 24px 0 24px;
+  padding: 24px 0px 24px 0px;
+  margin-left: 60px;
   background: #ffffff66;
   background-color: #25273c;
   caret-color: #72bef8;

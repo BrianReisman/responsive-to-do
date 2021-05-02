@@ -4,14 +4,14 @@ import closeHover from "../../assets/images/icon__close_hover.svg";
 import check from "../../assets/images/icon__check.svg";
 
 export const DisplayRoot = styled.div`
-  width: 800px;
+  max-width: 800px;
   text-align: center;
   border-radius: 7px;
   background-color: #25273c;
 `;
 export const EmptyMessageContainer = styled.div`
   border-radius: 7px;
-  width: 800px;
+  max-width: 800px;
   background-color: #25273c;
   display: flex;
   justify-content: center;

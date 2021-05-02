@@ -4,7 +4,7 @@ export const DashboardRoot = styled.div`
   /* border: 1px solid white; */
   display: flex;
   justify-content: space-between;
-  width: 800px;
+  max-width: 800px;
   padding: 27px 16px;
 
   color: #ffffff40;
@@ -35,4 +35,18 @@ export const ClearCompleted = styled.p`
   :hover {
     color: #fff;
   }
+`;
+
+export const Main = styled.main`
+  display: flex;
+  /* border: 1px solid red; */
+  width: 100%;
+  justify-content: space-between;
+`;
+
+export const MobileFilter = styled.div`
+  height: 100px;
+  width: 100px;
+  border-bottom: green;
+  border-top: greenyellow;
 `;
