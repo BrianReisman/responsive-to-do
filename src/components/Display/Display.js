@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import {
   DisplayRoot,
   EmptyMessageText,
@@ -16,9 +15,9 @@ const Display = ({
   toggleTaskCompleted,
   deleteTask,
   deleteCompleted,
+  filterHandler,
+  activeFilter, setActiveFilter
 }) => {
-  const [activeFilter, setActiveFilter] = useState("all");
-
   const onlyActiveTasks = tasks.filter((task) => !task.completed);
   const onlyCompletedTasks = tasks.filter((task) => task.completed);
 
@@ -65,6 +64,7 @@ const Display = ({
           activeFilter={activeFilter}
           setActiveFilter={setActiveFilter}
           itemsLeft={onlyActiveTasks}
+          filterHandler={filterHandler}
         />
       )}
     </DisplayRoot>

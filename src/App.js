@@ -4,9 +4,15 @@ import { Root, BackgroundImg, Container, Title } from "./GlobalElements";
 import img from "./assets/images/bg__trees.png";
 import Form from "./components/Form/Form";
 import Display from "./components/Display/Display";
-
+import FilterComponent from "./components/Display/Dashboard/Filter/Filter";
+import { MobileFilter } from "./components/Display/Dashboard/Dashboard.elements";
 function App() {
   const [tasks, setTasks] = useState([]);
+  const [activeFilter, setActiveFilter] = useState("all");
+
+  const filterHandler = (e) => {
+    setActiveFilter(e.target.id);
+  };
 
   useEffect(() => {
     const tasksFromLocalStorage = JSON.parse(localStorage.getItem("tasks"));
@@ -54,7 +60,14 @@ function App() {
             toggleTaskCompleted={toggleTaskCompleted}
             deleteTask={deleteTask}
             deleteCompleted={deleteCompleted}
+            filterHandler={filterHandler}
+            activeFilter={activeFilter}
           />
+          {tasks.length === 0 ? null : (
+            <MobileFilter>
+              <FilterComponent />
+            </MobileFilter>
+          )}
         </Container>
       </BackgroundImg>
     </Root>

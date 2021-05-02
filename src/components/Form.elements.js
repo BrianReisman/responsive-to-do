@@ -52,7 +52,7 @@ export const TextInput = styled.input`
   color: #ffffff40;
   outline: none;
 
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
   /* position: relative; */
   max-width: 700px;
 

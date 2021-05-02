@@ -3,7 +3,8 @@ import img from "./assets/images/bg__trees.png";
 
 export const Root = styled.div`
   /* width: 100vw; */
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
+
   background-color: #181824;
   height: 100vh;
   * {
@@ -36,6 +37,8 @@ export const Container = styled.div`
   /* top: 152px; */
   max-width: 800px;
   margin: 0 auto;
+  padding: 20px;
+
 `;
 
 export const Title = styled.h1`

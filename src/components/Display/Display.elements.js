@@ -16,30 +16,22 @@ export const EmptyMessageContainer = styled.div`
   display: flex;
   justify-content: center;
   padding: 50px 154px;
+  @media (max-width: 600px) {
+    padding: 30px 16px;
+  }
 `;
 export const EmptyMessageText = styled.p`
   color: #ffffff;
-
   font-family: Verdana;
   font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0em;
   text-align: center;
-
-  height: 48px;
-  width: 492px;
-  left: 474px;
-  top: 346px;
-  border-radius: nullpx;
+  /* border: 1px solid red; */
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
 `;
 export const Task = styled.div`
-  *{
-    /* border: 1px solid red; */
-  }
   border-radius: 7px 7px 0 0; //better way to get this via container?
-
   position: relative;
   display: flex;
   align-items: center;
