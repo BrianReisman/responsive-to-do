@@ -45,7 +45,7 @@ const Display = (props) => {
     <DisplayRoot>
       {props.tasks.length === 0 ? noTasks : null}
       {TasksToRender}
-      {props.tasks.length === 0 ? null : <Dashboard />}
+      {props.tasks.length === 0 ? null : <Dashboard deleteCompleted={props.deleteCompleted} />}
     </DisplayRoot>
   );
 };

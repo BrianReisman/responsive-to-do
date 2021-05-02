@@ -7,14 +7,15 @@ import {
 } from "./Dashboard.elements";
 import { useState } from "react";
 
-const Dashboard = () => {
+const Dashboard = ({deleteCompleted}) => {
+  
   const [activeFilter, setActiveFilter] = useState("all");
   const filterHandler = (e) => {
     setActiveFilter(e.target.id);
   };
-
+  
   const clearHandler = () => {
-    console.log("clearHandler");
+    deleteCompleted()
   };
   return (
     <DashboardRoot>

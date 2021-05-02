@@ -42,6 +42,11 @@ function App() {
     setTasks(updatedTasks);
   };
 
+  const deleteCompleted = () => {
+    const tasksStillUndone = [...tasks].filter((task) => !task.completed);
+    setTasks(tasksStillUndone);
+  };
+
   return (
     <Root>
       <BackgroundImg src={img} alt="forest landscape background">
@@ -53,6 +58,7 @@ function App() {
             tasks={tasks}
             toggleTaskCompleted={toggleTaskCompleted}
             deleteTask={deleteTask}
+            deleteCompleted={deleteCompleted}
           />
         </Container>
       </BackgroundImg>
