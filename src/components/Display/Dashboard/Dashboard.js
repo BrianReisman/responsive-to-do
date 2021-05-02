@@ -5,18 +5,17 @@ import {
   FilterOption,
   ClearCompleted,
 } from "./Dashboard.elements";
-import { useState } from "react";
 
-const Dashboard = ({deleteCompleted}) => {
-  
-  const [activeFilter, setActiveFilter] = useState("all");
+const Dashboard = ({ deleteCompleted, activeFilter, setActiveFilter }) => {
+
   const filterHandler = (e) => {
     setActiveFilter(e.target.id);
   };
-  
+
   const clearHandler = () => {
-    deleteCompleted()
+    deleteCompleted();
   };
+
   return (
     <DashboardRoot>
       <ItemsLeft>{2 * 3} items left</ItemsLeft>

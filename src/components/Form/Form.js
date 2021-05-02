@@ -32,9 +32,8 @@ const Form = (props) => {
 
   return (
     <FormRoot onSubmit={submitHandler}>
-      <CheckboxLabel htmlFor="checkbox">
-        <Checkbox type="checkbox" disabled id="checkbox" />
-      </CheckboxLabel>
+      <Checkbox type="checkbox" id="checkbox" disabled />
+      <CheckboxLabel />
       <TextInputLabel htmlFor="task-text">
         <TextInput
           placeholder="Create a new item..."

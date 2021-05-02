@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   DisplayRoot,
   EmptyMessageText,
@@ -11,10 +11,25 @@ import {
 } from "./Display.elements";
 import Dashboard from "./Dashboard/Dashboard";
 
-const Display = (props) => {
-  console.log(props.tasks);
+const Display = ({
+  tasks,
+  toggleTaskCompleted,
+  deleteTask,
+  deleteCompleted,
+}) => {
+  const [activeFilter, setActiveFilter] = useState("all");
+  
+  const onlyActiveTasks = tasks.filter((task) => !task.completed);
+  const onlyCompletedTasks = tasks.filter((task) => task.completed);
 
-  const TasksToRender = props.tasks.map((task) => {
+  const TasksToRender =
+    activeFilter === "all"
+      ? tasks
+      : activeFilter === "active"
+      ? onlyActiveTasks
+      : onlyCompletedTasks;
+
+  const RenderedTasks = TasksToRender.map((task) => {
     return (
       <Task key={task.id}>
         <Input
@@ -23,11 +38,11 @@ const Display = (props) => {
           // checked={false}
           name=""
           id={task.id}
-          onClick={props.toggleTaskCompleted}
+          onClick={toggleTaskCompleted}
         />
         <CheckboxLabel htmlFor={task.id} />
         <TaskText completed={task.completed}>{task.task}</TaskText>
-        <Close id={task.id} onClick={props.deleteTask} />
+        <Close id={task.id} onClick={deleteTask} />
       </Task>
     );
   });
@@ -43,9 +58,15 @@ const Display = (props) => {
 
   return (
     <DisplayRoot>
-      {props.tasks.length === 0 ? noTasks : null}
-      {TasksToRender}
-      {props.tasks.length === 0 ? null : <Dashboard deleteCompleted={props.deleteCompleted} />}
+      {tasks.length === 0 ? noTasks : null}
+      {RenderedTasks}
+      {tasks.length === 0 ? null : (
+        <Dashboard
+          deleteCompleted={deleteCompleted}
+          activeFilter={activeFilter}
+          setActiveFilter={setActiveFilter}
+        />
+      )}
     </DisplayRoot>
   );
 };

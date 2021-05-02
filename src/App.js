@@ -21,7 +21,7 @@ const seedTasks = [
 
 function App() {
   const [tasks, setTasks] = useState([...seedTasks]);
-
+  
   const toggleTaskCompleted = (e) => {
     const updatedTasks = tasks.map((task) => {
       if (task.id === e.target.id) {

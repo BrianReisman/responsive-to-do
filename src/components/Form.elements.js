@@ -2,45 +2,44 @@ import styled from "styled-components";
 
 //*Form
 export const FormRoot = styled.form`
-  /* border: 2px solid pink; */
+  *{
+    /* border: 1px solid red; */
+  }
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 800px;
   box-sizing: border-box;
+  width: 800px;
   background: #ffffff66;
   background-color: #25273c;
   border-radius: 7px;
   margin-bottom: 72px;
+  position: relative;
+
+  input[type="checkbox"] + label {
+    ::before {
+      content: "";
+      position: absolute;
+      top: 22px;
+      left: 16px;
+      width: 28px;
+      height: 28px;
+      border: 2px solid #ffffff40;
+      border-radius: 50%;
+      transition: 0.5s; //this code is also in Input.
+    }
+  }
 `;
 
 //* Checkbox
 export const Checkbox = styled.input`
-  /* width: 100px; */
-  /* display: none; */
+  /* border: 3px solid red; */
+  opacity: 0;
 `;
-/* background: url(${emptyCheck}); */
+
 export const CheckboxLabel = styled.label`
   /* border: 3px solid red; */
-  position: relative;
-  ::before {
-    content: "";
-    background-position: center;
-    background-size: contain;
-    width: 26px;
-    height: 26px;
-    position: absolute;
-    /* left: -44px; */
-    /* top: -8px; */
-  }
-  ::after {
-    content: "";
-    border: 1px solid white;
-    width: 26px;
-    height: 26px;
-    position: absolute;
-    border-radius: 50%;
-  }
+  /* position: relative; */
 `;
 
 //* Label
@@ -49,8 +48,8 @@ export const TextInputLabel = styled.label`
 `;
 export const TextInput = styled.input`
   cursor: default;
-
   border: none;
+  /* border: 2px solid pink; */
   color: #ffffff40;
   outline: none;
 

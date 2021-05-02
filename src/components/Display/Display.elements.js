@@ -4,10 +4,10 @@ import closeHover from "../../assets/images/icon__close_hover.svg";
 import check from "../../assets/images/icon__check.svg";
 
 export const DisplayRoot = styled.div`
-  border-radius: 7px;
   width: 800px;
-  background-color: #25273c;
   text-align: center;
+  border-radius: 7px;
+  background-color: #25273c;
 `;
 export const EmptyMessageContainer = styled.div`
   border-radius: 7px;
@@ -35,6 +35,9 @@ export const EmptyMessageText = styled.p`
   border-radius: nullpx;
 `;
 export const Task = styled.div`
+  *{
+    /* border: 1px solid red; */
+  }
   border-radius: 7px 7px 0 0; //better way to get this via container?
 
   position: relative;
@@ -101,14 +104,12 @@ export const Close = styled.button`
     background-image: url(${closeHover});
   }
 `;
-
 export const Input = styled.input`
   opacity: 0;
   position: relative;
   left: 16px;
   transition: 0.5s;
 `;
-
 export const CheckboxLabel = styled.label`
   position: relative;
   cursor: default;
