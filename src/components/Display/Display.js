@@ -18,6 +18,8 @@ const Display = (props) => {
       <Task key={task.id}>
         <Input
           type="checkbox"
+          // make checked dynamic based on completed prop on taskObj.
+          // checked={false}
           name=""
           id={task.id}
           onClick={props.toggleTaskCompleted}

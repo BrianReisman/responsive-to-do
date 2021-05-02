@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import close from "../../assets/images/icon__close.svg";
 import closeHover from "../../assets/images/icon__close_hover.svg";
+import check from "../../assets/images/icon__check.svg";
 
 export const DisplayRoot = styled.div`
   border-radius: 7px;
@@ -43,19 +44,33 @@ export const Task = styled.div`
   border-bottom: 1px solid #ffffff20;
 
   label::before {
-    content: "";
+    content: "l";
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 26px;
-    height: 26px;
+    /* left: 16px; */
+    top: -16px;
+    width: 28px;
+    height: 28px;
+    border: 2px solid #ffffff40;
     border-radius: 50%;
-    border: 2px solid #aaa;
     transition: 0.5s; //this code is also in Input.
+
+    &:hover {
+    border: 2px solid red;
+      border-image: linear-gradient(131.73deg, #72bef8 14.46%, #a674f2 87.62%);
+      border-image-slice: 1;
+      border-image-width: 1px;
+      /* border-image-source: linear-gradient(
+        131.73deg,
+        #72bef8 14.46%,
+        #a674f2 87.62%
+      ); */
+    }
   }
   input:checked + label::before {
     border: 2px solid green;
-      /* height: 50vh; */
+    background-image: url(${check});
+    background-size: cover;
+    /* height: 50vh; */
   }
 `;
 export const TaskText = styled.p`
@@ -84,8 +99,9 @@ export const Close = styled.button`
 `;
 
 export const Input = styled.input`
-  /* opacity: 0; */
-  width: 100px;
+  opacity: 0;
+  position: relative;
+  left: 16px;
   transition: 0.5s;
 `;
 
