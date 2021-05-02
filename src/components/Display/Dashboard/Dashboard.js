@@ -22,7 +22,7 @@ const Dashboard = ({
 
   return (
     <DashboardRoot>
-      <ItemsLeft>{itemsLeft.length} items left</ItemsLeft>
+      <ItemsLeft>{itemsLeft.length || 0} items left</ItemsLeft>
       <Filter>
         <FilterOption
           className={activeFilter === "all" ? "active" : null}

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 //*Form
 export const FormRoot = styled.form`
-  *{
+  * {
     /* border: 1px solid red; */
   }
   display: flex;
@@ -63,5 +63,8 @@ export const TextInput = styled.input`
   padding: 24px 0 24px;
   background: #ffffff66;
   background-color: #25273c;
-  /* caret-color: #72bef8; */ //*
+  caret-color: #72bef8;
+  :focus {
+    color: #ffffff;
+  }
 `;
