@@ -6,8 +6,12 @@ import {
   ClearCompleted,
 } from "./Dashboard.elements";
 
-const Dashboard = ({ deleteCompleted, activeFilter, setActiveFilter }) => {
-
+const Dashboard = ({
+  deleteCompleted,
+  activeFilter,
+  setActiveFilter,
+  itemsLeft,
+}) => {
   const filterHandler = (e) => {
     setActiveFilter(e.target.id);
   };
@@ -18,7 +22,7 @@ const Dashboard = ({ deleteCompleted, activeFilter, setActiveFilter }) => {
 
   return (
     <DashboardRoot>
-      <ItemsLeft>{2 * 3} items left</ItemsLeft>
+      <ItemsLeft>{itemsLeft.length} items left</ItemsLeft>
       <Filter>
         <FilterOption
           className={activeFilter === "all" ? "active" : null}

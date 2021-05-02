@@ -18,7 +18,7 @@ const Display = ({
   deleteCompleted,
 }) => {
   const [activeFilter, setActiveFilter] = useState("all");
-  
+
   const onlyActiveTasks = tasks.filter((task) => !task.completed);
   const onlyCompletedTasks = tasks.filter((task) => task.completed);
 
@@ -34,11 +34,10 @@ const Display = ({
       <Task key={task.id}>
         <Input
           type="checkbox"
-          // make checked dynamic based on completed prop on taskObj.
-          // checked={false}
+          checked={task.completed}
           name=""
           id={task.id}
-          onClick={toggleTaskCompleted}
+          onChange={toggleTaskCompleted}
         />
         <CheckboxLabel htmlFor={task.id} />
         <TaskText completed={task.completed}>{task.task}</TaskText>
@@ -65,6 +64,7 @@ const Display = ({
           deleteCompleted={deleteCompleted}
           activeFilter={activeFilter}
           setActiveFilter={setActiveFilter}
+          itemsLeft={onlyActiveTasks}
         />
       )}
     </DisplayRoot>

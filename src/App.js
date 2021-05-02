@@ -1,27 +1,22 @@
-import { useState } from "react";
-// import { v4 as uuid } from "uuid";
+import { useState, useEffect } from "react";
 
 import { Root, BackgroundImg, Container, Title } from "./GlobalElements";
 import img from "./assets/images/bg__trees.png";
 import Form from "./components/Form/Form";
 import Display from "./components/Display/Display";
 
-const seedTasks = [
-  // {
-  //   id: uuid(),
-  //   task: "seed task",
-  //   completed: false,
-  // },
-  // {
-  //   id: uuid(),
-  //   task: "seed task2**",
-  //   completed: false,
-  // },
-];
-
 function App() {
-  const [tasks, setTasks] = useState([...seedTasks]);
-  
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const tasksFromLocalStorage = JSON.parse(localStorage.getItem("tasks"));
+    setTasks(tasksFromLocalStorage);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
   const toggleTaskCompleted = (e) => {
     const updatedTasks = tasks.map((task) => {
       if (task.id === e.target.id) {
