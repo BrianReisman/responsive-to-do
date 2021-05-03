@@ -16,7 +16,8 @@ const Display = ({
   deleteTask,
   deleteCompleted,
   filterHandler,
-  activeFilter, setActiveFilter
+  activeFilter,
+  setActiveFilter,
 }) => {
   const onlyActiveTasks = tasks.filter((task) => !task.completed);
   const onlyCompletedTasks = tasks.filter((task) => task.completed);
@@ -57,7 +58,9 @@ const Display = ({
   return (
     <DisplayRoot>
       {tasks.length === 0 ? noTasks : null}
+
       {RenderedTasks}
+
       {tasks.length === 0 ? null : (
         <Dashboard
           deleteCompleted={deleteCompleted}

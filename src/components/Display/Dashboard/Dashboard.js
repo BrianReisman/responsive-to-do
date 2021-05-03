@@ -13,7 +13,9 @@ const Dashboard = ({
 
   return (
     <DashboardRoot>
-      <ItemsLeft>{itemsLeft.length || 0} items left</ItemsLeft>
+      <ItemsLeft>
+        {itemsLeft.length || 0} {itemsLeft.length === 1 ? "item" : "items"} left
+      </ItemsLeft>
 
       <div className="filter">
         <FilterComponent
