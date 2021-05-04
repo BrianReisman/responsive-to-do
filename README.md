@@ -1,7 +1,3 @@
-# Include any documentation as you would in a production-level codebase. For example, you might want to explain things that are not immediately clear or you might include links to similar solutions where you took inspiration for your work.
-
-If you have any questions, please reach out to Britta Rodenbeck at brodenbeck@xenith.com. When completed, please email Britta a link to your GitHub repository and a cute animal gif.
-
 # Project
 
 This project was built using create-react-app and the only package added was styled-components.
