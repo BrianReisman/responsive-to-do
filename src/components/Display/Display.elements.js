@@ -25,7 +25,6 @@ export const EmptyMessageText = styled.p`
   font-family: Verdana;
   font-size: 20px;
   text-align: center;
-  /* border: 1px solid red; */
   @media (max-width: 600px) {
     font-size: 16px;
   }
@@ -64,7 +63,6 @@ export const Task = styled.div`
   }
   input:checked + label::before {
     transition: 0.5s; //this code is also in Input.
-    /* border: 2px solid green; */
     background-image: url(${check}),
       linear-gradient(131.73deg, #72bef8 14.46%, #a674f2 87.62%);
     background-size: cover;
@@ -78,12 +76,10 @@ export const TaskText = styled.p`
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  /* line-height: 24px; */
-  margin: 24px 0 24px 60px;
+  margin: 24px 60px;
   letter-spacing: 0em;
   text-align: left;
-  /* word-wrap: break-word; */ //!handle long tasts
-  @media(max-width: 600px){
+  @media (max-width: 600px) {
     font-size: 16px;
   }
 `;

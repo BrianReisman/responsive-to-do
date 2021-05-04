@@ -35,23 +35,24 @@ export const Checkbox = styled.input`
 `;
 
 export const CheckboxLabel = styled.label`
-/* position: relative; */
+  /* position: relative; */
 `;
 
 //* Label
 export const TextInputLabel = styled.label`
+  /* border: 2px solid yellow; */
   margin-left: 60px;
   position: relative;
   border-radius: 7px;
   flex-basis: 700px;
-  `;
+`;
 export const TextInput = styled.input`
   cursor: default;
   border-radius: 7px;
   border: none;
   color: #ffffff40;
   outline: none;
-
+  width: 100%;
   position: relative;
   font-family: Verdana;
   font-size: 20px;
@@ -59,14 +60,14 @@ export const TextInput = styled.input`
   font-weight: 400;
   letter-spacing: 0em;
   text-align: left;
-  padding: 24px 0px 24px 0px;
+  padding: 24px 20px 24px 0px;
   background: #ffffff66;
   background-color: #25273c;
   caret-color: #72bef8;
   :focus {
     color: #ffffff;
   }
-  @media(max-width: 600px){
+  @media (max-width: 600px) {
     font-size: 16px;
   }
 `;
