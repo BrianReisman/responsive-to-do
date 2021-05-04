@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Display from "./components/Display/Display";
+import Display from "../components/Display/Display";
 import userEvent from "@testing-library/user-event";
 
 describe("<Display/>", () => {
@@ -14,14 +14,12 @@ describe("<Display/>", () => {
     );
     expect(noItemsMessage).toBeInTheDocument();
   });
-
   test("message gone when task is present", () => {
     const noItemsMessage = screen.queryByText(
       /items in your todo list. Create an item to begin/i
     );
     expect(noItemsMessage).not.toBeInTheDocument();
   });
-
   test("'item', singular, renders when only one task", () => {
     const plural = screen.queryByText(/items/i);
     expect(plural).not.toBeInTheDocument();

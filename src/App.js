@@ -6,6 +6,7 @@ import Form from "./components/Form/Form";
 import Display from "./components/Display/Display";
 import FilterComponent from "./components/Display/Dashboard/Filter/Filter";
 import { MobileFilter } from "./components/Display/Dashboard/Dashboard.elements";
+
 function App() {
   const [tasks, setTasks] = useState([]);
   const [activeFilter, setActiveFilter] = useState("all");
@@ -24,6 +25,7 @@ function App() {
   }, [tasks]);
 
   const toggleTaskCompleted = (e) => {
+    console.log('toggle')
     const updatedTasks = tasks.map((task) => {
       if (task.id === e.target.id) {
         return { ...task, completed: !task.completed };

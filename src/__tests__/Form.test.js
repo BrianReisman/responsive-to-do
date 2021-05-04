@@ -2,7 +2,7 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import Form from "./Form";
+import Form from "../components/Form/Form";
 
 describe("<Form/>", () => {
   let input;

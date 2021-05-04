@@ -2,13 +2,9 @@ import {
   DisplayRoot,
   EmptyMessageText,
   EmptyMessageContainer,
-  Task,
-  Close,
-  TaskText,
-  Input,
-  CheckboxLabel,
 } from "./Display.elements";
 import Dashboard from "./Dashboard/Dashboard";
+import Task from "./Task/Task";
 
 const Display = ({
   tasks,
@@ -31,18 +27,12 @@ const Display = ({
 
   const RenderedTasks = TasksToRender.map((task) => {
     return (
-      <Task key={task.id}>
-        <Input
-          type="checkbox"
-          checked={task.completed}
-          name=""
-          id={task.id}
-          onChange={toggleTaskCompleted}
-        />
-        <CheckboxLabel htmlFor={task.id} />
-        <TaskText completed={task.completed}>{task.task}</TaskText>
-        <Close id={task.id} onClick={deleteTask} />
-      </Task>
+      <Task
+        key={task.id}
+        task={task}
+        deleteTask={deleteTask}
+        toggleTaskCompleted={toggleTaskCompleted}
+      />
     );
   });
 

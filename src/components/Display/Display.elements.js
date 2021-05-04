@@ -29,7 +29,7 @@ export const EmptyMessageText = styled.p`
     font-size: 16px;
   }
 `;
-export const Task = styled.div`
+export const TaskRoot = styled.div`
   border-radius: 7px 7px 0 0; //better way to get this via container?
   position: relative;
   display: flex;
