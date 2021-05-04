@@ -49,7 +49,7 @@ const Display = ({
     <DisplayRoot>
       {tasks.length === 0 ? noTasks : null}
 
-      {RenderedTasks}
+      {tasks.length === 0 ? null : RenderedTasks}
 
       {tasks.length === 0 ? null : (
         <Dashboard

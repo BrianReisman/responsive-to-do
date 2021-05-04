@@ -9,13 +9,13 @@ import {
 
 const Task = ({ task, toggleTaskCompleted, deleteTask }) => {
   return (
-    <TaskRoot>
+    <TaskRoot key={task.id}>
       <Input
         type="checkbox"
+        onChange={toggleTaskCompleted}
         checked={task.completed}
         name=""
         id={task.id}
-        onChange={toggleTaskCompleted}
       />
       <CheckboxLabel htmlFor={task.id} />
       <TaskText completed={task.completed}>{task.task}</TaskText>

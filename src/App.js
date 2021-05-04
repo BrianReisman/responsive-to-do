@@ -25,7 +25,6 @@ function App() {
   }, [tasks]);
 
   const toggleTaskCompleted = (e) => {
-    console.log('toggle')
     const updatedTasks = tasks.map((task) => {
       if (task.id === e.target.id) {
         return { ...task, completed: !task.completed };

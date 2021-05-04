@@ -19,25 +19,30 @@ const Form = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    if(input){
-
+    if (input) {
       const taskObj = {
         id: uuid(),
         task: input,
         completed: false,
       };
-      
+
       props.setTasks([...props.tasks, taskObj]);
-      
+
       setInput("");
     } else {
-      return
+      return;
     }
-    };
+  };
 
   return (
     <FormRoot onSubmit={submitHandler}>
-      <Checkbox type="checkbox" id="checkbox" disabled />
+      <Checkbox
+        type="checkbox"
+        id="checkbox"
+        disabled
+        readOnly
+        defaultChecked
+      />
       <CheckboxLabel />
       <TextInputLabel htmlFor="task-text">
         <TextInput

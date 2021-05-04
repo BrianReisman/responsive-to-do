@@ -1,6 +1,9 @@
+// Import React testing methods
 import { render, screen } from "@testing-library/react";
-import Display from "../components/Display/Display";
 import userEvent from "@testing-library/user-event";
+
+// The component to test
+import Display from "../components/Display/Display";
 
 describe("<Display/>", () => {
   beforeEach(() => {
@@ -33,45 +36,49 @@ describe("<Display/>", () => {
     const singular = screen.queryByText(/^item$/);
     expect(singular).not.toBeInTheDocument();
   });
-  test("that task change with changing props", async () => {
-    const { rerender } = render(
+});
+
+describe("tasks change with different filter options", () => {
+  test("with filter 'all', 3/3 tests render", async () => {
+    render(
       <Display
+        activeFilter="all"
         tasks={[
-          { task: "duplicate 1", completed: true },
+          { task: "duplicate 1", completed: false },
           { task: "duplicate 2", completed: true },
+          { task: "duplicate 3", completed: true },
         ]}
       />
     );
     const twoTasks = screen.getAllByText(/duplicate/i);
-    expect(twoTasks).toHaveLength(2);
-
-    // const completed = screen.getByText(/^completed$/i);
-    // userEvent.click(completed)
-    // const twoTasksCompleted = screen.getAllByText(/duplicate/i);
-    // expect(twoTasksCompleted).toHaveLength(2);
-
-    await rerender(
+    expect(twoTasks).toHaveLength(3);
+  });
+  test("with filter 'active', 1/3 tests render", async () => {
+    render(
       <Display
+        activeFilter="active"
         tasks={[
           { task: "duplicate 1", completed: false },
           { task: "duplicate 2", completed: true },
+          { task: "duplicate 3", completed: true },
         ]}
       />
     );
-    const afterPropsChange = screen.getAllByText(/duplicate/i);
-    expect(afterPropsChange).toHaveLength(1);
+    const tasksInCompletedView = screen.getAllByText(/duplicate/i);
+    expect(tasksInCompletedView).toHaveLength(1);
+  });
+  test("with filter 'complete', 2/3 tests render", async () => {
+    render(
+      <Display
+        activeFilter="complete"
+        tasks={[
+          { task: "duplicate 1", completed: false },
+          { task: "duplicate 2", completed: true },
+          { task: "duplicate 3", completed: true },
+        ]}
+      />
+    );
+    const tasksInActiveView = screen.getAllByText(/duplicate/i);
+    expect(tasksInActiveView).toHaveLength(2);
   });
 });
-
-// expect(addedTask).toBeInTheDocument();
-// const task = screen.getByText(/sample task for test/i).closest("div");
-
-// screen.debug(task);
-
-// const button = screen.getByRole("button");
-// expect(addedTask).toBeInTheDocument();
-// userEvent.click(button)
-// expect(addedTask).toBeInTheDocument();
-
-// screen.debug
-// .closet()
