@@ -50,7 +50,8 @@ export const MobileFilter = styled.div`
   max-width: 800px;
   padding: 27px 16px;
   color: ${(props) => props.theme.text.dull};
-  background-color: ${(props) => props.theme.background.main};
+  background-color: ${(props) => props.theme.background.container};
+  /* background-color: red; */
   border-radius: 7px;
   margin-top: 24px;
   .active {

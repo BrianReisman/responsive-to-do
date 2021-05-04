@@ -1,3 +1,5 @@
+# Include any documentation as you would in a production-level codebase. For example, you might want to explain things that are not immediately clear or you might include links to similar solutions where you took inspiration for your work.
+
 React
 
 Please do not add any additional NPM packages that are outside of the dev dependencies, (e.g., do not use Moment or Lodash, but feel free to implement linting standards or Styled Components, if that is part of your comfortable workflow).
@@ -49,6 +51,6 @@ This project was built using create-react-app and the only package added was sty
 - I added a check to prevent a task with no text from being submitted. However, perhaps we could have a message telling the user explicityly that a task with no text is not valid so they wouldn't wonder if it wasn't working or why.
 - Just like there is a text message when there are no to-dos. perhaps adding a message for views 'active' and 'completed' so users don't think it's empty by accident since of their tasks, that particular view does not have any tasks that meet the criteria.
 
-# Include any documentation as you would in a production-level codebase. For example, you might want to explain things that are not immediately clear or you might include links to similar solutions where you took inspiration for your work.
+---
 
 - Last but not least a cute animal gif; https://giphy.com/gifs/cute-aww-eyebleach-fxgTGtqZyV2ZqdJBWI.

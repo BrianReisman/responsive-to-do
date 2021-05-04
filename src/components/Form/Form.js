@@ -20,7 +20,7 @@ const Form = (props) => {
 
     if (input) {
       const taskObj = {
-        id: Date.now(),
+        id: Date.now().toString(),
         task: input,
         completed: false,
       };
