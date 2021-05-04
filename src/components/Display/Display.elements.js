@@ -30,7 +30,7 @@ export const EmptyMessageText = styled.p`
   }
 `;
 export const TaskRoot = styled.div`
-  border-radius: 7px 7px 0 0; //better way to get this via container?
+  border-radius: 7px 7px 0 0;
   position: relative;
   display: flex;
   align-items: center;

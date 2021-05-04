@@ -9,14 +9,7 @@ describe("<Form/>", () => {
   let tasks = [];
 
   beforeEach(() => {
-    render(
-      <Form
-        tasks={tasks}
-        setTasks={() => {
-          console.log("");
-        }}
-      />
-    );
+    render(<Form tasks={tasks} setTasks={() => {}} />);
     input = screen.getByPlaceholderText(/create a new item.../i);
   });
 

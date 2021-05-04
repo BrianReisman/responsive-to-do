@@ -2,11 +2,7 @@ import styled from "styled-components";
 import img from "./assets/images/bg__trees.png";
 
 export const Root = styled.div`
-  /* width: 100vw; */
-  /* border: 3px solid blue; */
-
   background-color: #181824;
-  height: 100vh;
   * {
     margin: 0;
     padding: 0;
@@ -16,7 +12,7 @@ export const Root = styled.div`
 `;
 
 export const BackgroundImg = styled.div`
-  padding-top: 88px;
+  padding: 88px 20px 0 20px;
   z-index: -1;
   background-image: linear-gradient(
       131.73deg,
@@ -27,22 +23,15 @@ export const BackgroundImg = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 40vh;
+  height: 352px;
 `;
 
 export const Container = styled.div`
-  /* border: 1px solid blue; */
-
-  /* position: relative; */
-  /* top: 152px; */
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
 `;
 
 export const Title = styled.h1`
-  /* border: 1px solid red; */
-
   margin-bottom: 20px;
   color: #ffffff;
   height: 44px;

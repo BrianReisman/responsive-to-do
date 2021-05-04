@@ -38,15 +38,15 @@ export const CheckboxLabel = styled.label`
   /* position: relative; */
 `;
 
-//* Label
 export const TextInputLabel = styled.label`
-  /* border: 2px solid yellow; */
+
   margin-left: 60px;
   position: relative;
   border-radius: 7px;
   flex-basis: 700px;
 `;
 export const TextInput = styled.input`
+
   cursor: default;
   border-radius: 7px;
   border: none;

@@ -17,7 +17,6 @@ function App() {
 
   useEffect(() => {
     const tasksFromLocalStorage = JSON.parse(localStorage.getItem("tasks"));
-    console.log("asdf", tasksFromLocalStorage);
     if (!tasksFromLocalStorage) {
       setTasks([])
     } else {
@@ -30,9 +29,6 @@ function App() {
   }, [tasks]);
 
   const toggleTaskCompleted = (e) => {
-    console.log("toggle");
-    console.log(tasks);
-
     const updatedTasks = tasks.map((task) => {
       if (task.id === e.target.id) {
         return { ...task, completed: !task.completed };
@@ -56,7 +52,7 @@ function App() {
     const tasksStillUndone = [...tasks].filter((task) => !task.completed);
     setTasks(tasksStillUndone);
   };
-  console.log(tasks);
+
   return (
     <Root>
       <BackgroundImg src={img} alt="forest landscape background">
