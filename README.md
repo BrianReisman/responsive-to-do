@@ -29,6 +29,8 @@ This project was built using create-react-app and the only package added was sty
 [] In the terminal of your code editor from the root of the project directory run
 `npm run test`
 
+- To see passing tests you will need to scroll above warning text
+
 - Please note: while all tests pass there are two warnings. The first reads: Warning: You provided a `checked` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultChecked`. Otherwise, set either `onChange` or `readOnly`. There is in fact an onChange handler present on all inputs with a checked property. Warning two reads: Warning: Each child in a list should have a unique "key" prop. Check the render method of `Display`. I am similarly unsure why this is present since all elements that have been mapped have a key={} prop passed with a unique ID. Despite these warnings, all tests still pass.
 
 ## Lessons learned from this project
