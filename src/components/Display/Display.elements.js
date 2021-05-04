@@ -7,12 +7,12 @@ export const DisplayRoot = styled.div`
   max-width: 800px;
   text-align: center;
   border-radius: 7px;
-  background-color: ${(props) => props.theme.background.container};
+  background-color: #25273c;
 `;
 export const EmptyMessageContainer = styled.div`
   border-radius: 7px;
   max-width: 800px;
-  background-color: ${(props) => props.theme.background.container};
+  background-color: #25273c;
   display: flex;
   justify-content: center;
   padding: 50px 154px;
@@ -21,7 +21,7 @@ export const EmptyMessageContainer = styled.div`
   }
 `;
 export const EmptyMessageText = styled.p`
-  color: ${(props) => props.theme.text.main};
+  color: #ffffff;
   font-family: Verdana;
   font-size: 20px;
   text-align: center;
@@ -34,8 +34,8 @@ export const TaskRoot = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  background: ${(props) => props.theme.background.container};
-  border-bottom: 1px solid ${(props) => props.theme.background.border};
+  background: #25273c;
+  border-bottom: 1px solid #ffffff20;
 
   label {
     ::before {
@@ -45,7 +45,7 @@ export const TaskRoot = styled.div`
       top: -16px;
       width: 28px;
       height: 28px;
-      border: 2px solid ${(props) => props.theme.text.dull};
+      border: 2px solid #ffffff40;
       border-radius: 50%;
     }
   }

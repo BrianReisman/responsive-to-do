@@ -5,7 +5,7 @@ export const DashboardRoot = styled.div`
   justify-content: space-between;
   max-width: 800px;
   padding: 27px 16px;
-  color: ${(props) => props.theme.text.dull};
+  color: #ffffff40;
 
   @media (max-width: 600px) {
     .filter {
@@ -25,7 +25,7 @@ export const Filter = styled.div`
   width: 100%;
   justify-content: center;
   .active {
-    color: ${(props) => props.theme.text.active};
+    color: #72bef8;
     padding: 0 12px;
     cursor: default;
   }
@@ -34,13 +34,13 @@ export const FilterOption = styled.p`
   padding: 0 12px;
   cursor: default;
   :hover {
-    color: ${(props) => props.theme.text.main};
+    color: #ffffff;
   }
 `;
 export const ClearCompleted = styled.p`
   cursor: default;
   :hover {
-    color: ${(props) => props.theme.text.main};
+    color: #ffffff;
   }
 `;
 
@@ -49,13 +49,13 @@ export const MobileFilter = styled.div`
   justify-content: space-between;
   max-width: 800px;
   padding: 27px 16px;
-  color: ${(props) => props.theme.text.dull};
-  background-color: ${(props) => props.theme.background.container};
+  color: #ffffff40;
+  background-color: #25273c;
   /* background-color: red; */
   border-radius: 7px;
   margin-top: 24px;
   .active {
-    color: ${(props) => props.theme.text.active};
+    color: #72bef8;
     padding: 0 12px;
     cursor: default;
   }

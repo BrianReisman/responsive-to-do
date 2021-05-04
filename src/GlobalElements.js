@@ -5,7 +5,7 @@ export const Root = styled.div`
   /* width: 100vw; */
   /* border: 3px solid blue; */
 
-  background-color: ${props => props.theme.background.main};
+  background-color: #181824;
   height: 100vh;
   * {
     margin: 0;
@@ -38,14 +38,13 @@ export const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-
 `;
 
 export const Title = styled.h1`
   /* border: 1px solid red; */
 
   margin-bottom: 20px;
-  color: ${props => props.theme.text.main};
+  color: #ffffff;
   height: 44px;
   width: 143px;
   font-family: Verdana;
@@ -55,7 +54,7 @@ export const Title = styled.h1`
   line-height: 44px;
   letter-spacing: 0.25em;
   text-align: left;
-  @media(max-width: 600px){
+  @media (max-width: 600px) {
     font-size: 24px;
   }
 `;

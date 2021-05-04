@@ -1,6 +1,5 @@
 // Import React testing methods
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 
 // The component to test
 import Display from "../components/Display/Display";

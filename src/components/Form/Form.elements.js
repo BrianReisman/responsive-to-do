@@ -8,8 +8,8 @@ export const FormRoot = styled.form`
   box-sizing: border-box;
   justify-content: center;
   max-width: 800px;
-  background: ${(props) => props.theme.text.dull};
-  background-color: ${(props) => props.theme.background.container};
+  background: #ffffff40;
+  background-color: #25273c;
   border-radius: 7px;
   margin-bottom: 72px;
   position: relative;
@@ -22,7 +22,7 @@ export const FormRoot = styled.form`
       left: 16px;
       width: 28px;
       height: 28px;
-      border: 2px solid ${(props) => props.theme.text.dull};
+      border: 2px solid #ffffff40;
       border-radius: 50%;
       transition: 0.5s; //this code is also in Input.
     }
@@ -50,7 +50,7 @@ export const TextInput = styled.input`
   cursor: default;
   border-radius: 7px;
   border: none;
-  color: ${(props) => props.theme.text.dull};
+  color: #ffffff40;
   outline: none;
   width: 100%;
   position: relative;
@@ -62,10 +62,10 @@ export const TextInput = styled.input`
   text-align: left;
   padding: 24px 20px 24px 0;
   /* background: #ffffff66; */
-  background-color: ${props => props.theme.background.container};
-  caret-color: ${(props) => props.theme.text.active};
+  background-color: #25273c;
+  caret-color: #72bef8;
   :focus {
-    color: ${(props) => props.theme.text.main};
+    color: #ffffff;
   }
   @media (max-width: 600px) {
     font-size: 16px;
