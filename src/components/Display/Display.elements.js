@@ -7,12 +7,12 @@ export const DisplayRoot = styled.div`
   max-width: 800px;
   text-align: center;
   border-radius: 7px;
-  background-color: #25273c;
+  background-color: ${(props) => props.theme.background.container};
 `;
 export const EmptyMessageContainer = styled.div`
   border-radius: 7px;
   max-width: 800px;
-  background-color: #25273c;
+  background-color: ${(props) => props.theme.background.container};
   display: flex;
   justify-content: center;
   padding: 50px 154px;
@@ -21,7 +21,7 @@ export const EmptyMessageContainer = styled.div`
   }
 `;
 export const EmptyMessageText = styled.p`
-  color: #ffffff;
+  color: ${(props) => props.theme.text.main};
   font-family: Verdana;
   font-size: 20px;
   text-align: center;
@@ -34,39 +34,32 @@ export const TaskRoot = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  background: #25273c;
-  border-bottom: 1px solid #ffffff20;
+  background: ${(props) => props.theme.background.container};
+  border-bottom: 1px solid ${(props) => props.theme.background.border};
 
   label {
-    transition: 0.5s; //this code is also in Input.
     ::before {
+      margin: 0 5px;
       content: "";
       position: absolute;
       top: -16px;
       width: 28px;
       height: 28px;
-      border: 2px solid #ffffff40;
+      border: 2px solid ${(props) => props.theme.text.dull};
       border-radius: 50%;
       transition: 0.5s; //this code is also in Input.
     }
     :hover::before {
-      transition: 0.5s; //this code is also in Input.
-      border-image: linear-gradient(131.73deg, #72bef8 14.46%, #a674f2 87.62%);
-      border-image-slice: 1;
-      border-image-width: 1px;
-      /* border-image-source: linear-gradient(
-        131.73deg,
-        #72bef8 14.46%,
-        #a674f2 87.62%
-      ); */
+      /* border-image: linear-gradient(131.73deg, #72bef8 14.46%, #a674f2 87.62%); */
+      /* border: 1px solid */
+      /* linear-gradient(131.73deg, #72bef8 14.46%, #a674f2 87.62%); */
+      /* border-image-width: 1px; */
     }
   }
   input:checked + label::before {
-    transition: 0.5s; //this code is also in Input.
     background-image: url(${check}),
       linear-gradient(131.73deg, #72bef8 14.46%, #a674f2 87.62%);
     background-size: cover;
-    /* height: 50vh; */
   }
 `;
 export const TaskText = styled.p`
@@ -98,13 +91,8 @@ export const Close = styled.button`
 `;
 export const Input = styled.input`
   opacity: 0;
-  position: relative;
-  left: 16px;
-  transition: 0.5s;
 `;
 export const CheckboxLabel = styled.label`
   position: relative;
   cursor: default;
-  display: inline-block;
-  color: #666;
 `;

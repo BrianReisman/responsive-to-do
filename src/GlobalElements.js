@@ -5,7 +5,7 @@ export const Root = styled.div`
   /* width: 100vw; */
   /* border: 3px solid blue; */
 
-  background-color: #181824;
+  background-color: ${props => props.theme.background.main};
   height: 100vh;
   * {
     margin: 0;
@@ -45,7 +45,7 @@ export const Title = styled.h1`
   /* border: 1px solid red; */
 
   margin-bottom: 20px;
-  color: #ffffff;
+  color: ${props => props.theme.text.main};
   height: 44px;
   width: 143px;
   font-family: Verdana;
