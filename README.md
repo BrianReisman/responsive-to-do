@@ -1,43 +1,54 @@
-# Web Developer Challenge
-_This is taken and modified from [Frontend Mentor](https://frontendmentor.io)._
-
-## The Technology
-Both functionality and design are important when building this Todo application. This is a front-end only challenge. The state management only needs to occur on the front end and does not need to sync with any backend or database.
-
-You must use JavaScript to complete the challenge; however, the flavor of JavaScript can be any of the following:
-- React
-- Vue
-- Vanilla JS
-
-You may use any pre- or post-processor for CSS that you want, or you may write plain CSS. We use both plain CSS and Sass at Xenith.
+React
 
 Please do not add any additional NPM packages that are outside of the dev dependencies, (e.g., do not use Moment or Lodash, but feel free to implement linting standards or Styled Components, if that is part of your comfortable workflow).
 
-## The Design
-[Here is a link to the Figma designs](https://www.figma.com/file/Ww2XrYqcNUQ4TXjZmzFDr5/Untitled?node-id=0%3A1). If you are unfamiliar with Figma, take a few moments to familiarize yourself with the software. [Figma's YouTube channel](https://www.youtube.com/channel/UCQsVmhSa4X-G3lHlUtejzLA) has great resources to help you get up to speed on using their product. Gregory Schmidt also has [a great playlist](https://www.youtube.com/playlist?list=PL7e8VJ_ZN6epq-oiYOufiuPI-fpDC2Mby) dedicated specifically to developers learning to use Figma. **Treat these designs as you would if a UI designer handed them off for your development sprint.**
-
-## The Challenge Specifics
-Your users should be able to:
-- View the optimal layout for the application depending on their device's screen size.
-- See hover states for all interactive elements on the page.
-- Add new todo items to the list.
-- Mark todo items as complete.
-- Filter by all / active / complete todo items.
-- Clear all completed todo items.
-
-Bonus functionality or features (these are not mandatory but will make you stand out):
-- Drag and drop to reorder items on the list.
-- Swipe to delete.
-- Show off your animation / transition skills.
-- Deploy your project to GitHub Pages, Vercel, or Netlify (or whatever other hosting platform you prefer).
-- Include tests using Jest (or whatever JavaScript testing framework you prefer).
-
-## Committing and Pushing Your Work
-Commit and push your work to a repository on your own GitHub account. Commit and push as often as you normally would, keeping in mind that we will be paying attention to your git hygiene.
-
-1. Create a `README.md` for your project. This should detail (a.) how we can pull down and run your project locally, (b.) what you learned from the project, and (c.) what you would like to improve / how you could enhance the project in the future.
-2. Include any documentation as you would in a production-level codebase. For example, you might want to explain things that are not immediately clear or you might include links to similar solutions where you took inspiration for your work.
-3. Ensure that your solution works in all modern browsers that you are reasonably able to test.
-
-## Questions
 If you have any questions, please reach out to Britta Rodenbeck at brodenbeck@xenith.com. When completed, please email Britta a link to your GitHub repository and a cute animal gif.
+
+# The Project:
+
+This project was built using create-react-app and the only package added was styled-components.
+
+## MVP - This project satisfies the following:
+
+- Responsive design to view on multiple device screen sizes.
+- Allows for adding, marking complete, and removing individual tasks.
+- Allows for bulk deletion of all completed todo items.
+- Allows filtering through tasks by all, active, and completed todo items.
+
+## Bonuses:
+
+- This project has been deployed to Vercel and can be found live at https://responsive-to-do.vercel.app/.
+- A dozen test cases have been written using React Testing Library and all are passing.
+- Persistance was added by using the browser's localStorage.
+
+## How to pull down and run this project
+
+[] In a directory of choice on your local machine run:
+`git clone https://github.com/BrianReisman/responsive-to-do.git`
+[] Navigate into the root of this project and to install all dependencies run:
+`npm i`
+[] After installation is complete, to run the project locally run:
+`npm start`
+
+## How to run the test
+
+[] In the terminal of your code editor from the root of the project directory run
+`npm run test`
+
+## Lessons learned from this project
+
+- When I originally structured this project I did not have a dedicated component and file for what is now Task.js. This was no issue, the app worked exactly as it does in its current state. However, when I went to write some tests for this portion of the app, it was nearly impossible and I knew there must be an easier way. I remembered having hear that one of the benefits of modularity is the ease of testing it offers. I thought I'd try, so I refactored the code into its own component, and wrote so new tests. The functionality of the app stayed the same, but the testing was significantly easier and ultimately the Display.js file was much smaller and therefore more readable.
+- Another lesson I leared was how helpful having a wireframe is!
+
+## Features I could see enhancing this project in the future:
+
+- Allow tasks when they are created to take a due date and add another filter to show only tasks due today.
+- Have an archive setting which also persists in local storage that removes tasks from views, but stores them for a seprate view.
+- Light and dark mode. I set up the skeleton of this taking advantage of Styled-Components' ThemeProvider. This color theme preference could also be saved to local storage so when the user returns, the options would be applied.
+- Make tasks editable. Perhaps with a doubleclick event listener which would allow the user the option to edit existing tasks in place, instead of deleting and creating a new one if their desire was to update text.
+- I added a check to prevent a task with no text from being submitted. However, perhaps we could have a message telling the user explicityly that a task with no text is not valid so they wouldn't wonder if it wasn't working or why.
+- Just like there is a text message when there are no to-dos. perhaps adding a message for views 'active' and 'completed' so users don't think it's empty by accident since of their tasks, that particular view does not have any tasks that meet the criteria.
+
+# Include any documentation as you would in a production-level codebase. For example, you might want to explain things that are not immediately clear or you might include links to similar solutions where you took inspiration for your work.
+
+- Last but not least a cute animal gif; https://giphy.com/gifs/cute-aww-eyebleach-fxgTGtqZyV2ZqdJBWI.

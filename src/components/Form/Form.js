@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { v4 as uuid } from "uuid";
 
 import {
   FormRoot,
@@ -21,7 +20,7 @@ const Form = (props) => {
 
     if (input) {
       const taskObj = {
-        id: uuid(),
+        id: Date.now(),
         task: input,
         completed: false,
       };

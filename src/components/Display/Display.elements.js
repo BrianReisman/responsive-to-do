@@ -47,13 +47,6 @@ export const TaskRoot = styled.div`
       height: 28px;
       border: 2px solid ${(props) => props.theme.text.dull};
       border-radius: 50%;
-      transition: 0.5s; //this code is also in Input.
-    }
-    :hover::before {
-      /* border-image: linear-gradient(131.73deg, #72bef8 14.46%, #a674f2 87.62%); */
-      /* border: 1px solid */
-      /* linear-gradient(131.73deg, #72bef8 14.46%, #a674f2 87.62%); */
-      /* border-image-width: 1px; */
     }
   }
   input:checked + label::before {
