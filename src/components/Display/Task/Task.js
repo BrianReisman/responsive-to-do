@@ -14,7 +14,7 @@ const Task = ({ task, toggleTaskCompleted, deleteTask }) => {
         type="checkbox"
         onChange={toggleTaskCompleted}
         checked={task.completed}
-        name=""
+        name="checkbox"
         id={task.id}
       />
       <CheckboxLabel htmlFor={task.id} />

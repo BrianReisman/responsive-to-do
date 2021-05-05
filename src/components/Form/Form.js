@@ -29,6 +29,7 @@ const Form = (props) => {
 
       setInput("");
     } else {
+      // if input is falsy, return to prevent tasks without text from being added.
       return;
     }
   };

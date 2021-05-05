@@ -15,15 +15,18 @@ function App() {
     setActiveFilter(e.target.id);
   };
 
+  // on initial render, check local storage for a key of "tasks".
+  // If it doesn't exists, initialize it to an empty array. Otherwise, applied what is stored
   useEffect(() => {
     const tasksFromLocalStorage = JSON.parse(localStorage.getItem("tasks"));
     if (!tasksFromLocalStorage) {
-      setTasks([])
+      setTasks([]);
     } else {
       setTasks(tasksFromLocalStorage);
     }
   }, []);
 
+  // Anytime tasks changes, update what is stored in local storage.
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
@@ -48,6 +51,7 @@ function App() {
     setTasks(updatedTasks);
   };
 
+  // filter through tasks only for those undone and set those to tasks.
   const deleteCompleted = () => {
     const tasksStillUndone = [...tasks].filter((task) => !task.completed);
     setTasks(tasksStillUndone);
@@ -68,6 +72,7 @@ function App() {
             filterHandler={filterHandler}
             activeFilter={activeFilter}
           />
+          {/* media query has this as display:none; until screen sizes <600px */}
           {tasks.length === 0 ? null : (
             <MobileFilter>
               <FilterComponent

@@ -14,6 +14,7 @@ const Dashboard = ({
   return (
     <DashboardRoot>
       <ItemsLeft>
+        {/* based on whether or not there are multiple items update the word to the pural form */}
         {itemsLeft.length || 0} {itemsLeft.length === 1 ? "item" : "items"} left
       </ItemsLeft>
 

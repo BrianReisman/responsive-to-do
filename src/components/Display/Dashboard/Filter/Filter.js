@@ -1,31 +1,31 @@
-import {FilterOption, Filter} from '../Dashboard.elements'
+import { FilterOption, Filter } from "../Dashboard.elements";
 
-const FilterComponent = (props) => {
-  return(
-      <Filter>
-        <FilterOption
-          className={props.activeFilter === "all" ? "active" : null}
-          onClick={props.filterHandler}
-          id="all"
-        >
-          All
-        </FilterOption>
-        <FilterOption
-          className={props.activeFilter === "active" ? "active" : null}
-          onClick={props.filterHandler}
-          id="active"
-        >
-          Active
-        </FilterOption>
-        <FilterOption
-          className={props.activeFilter === "completed" ? "active" : null}
-          onClick={props.filterHandler}
-          id="completed"
-        >
-          Completed
-        </FilterOption>
-      </Filter>
-  )
+const FilterComponent = ({ activeFilter, filterHandler }) => {
+  return (
+    <Filter>
+      <FilterOption
+        className={activeFilter === "all" ? "active" : null}
+        onClick={filterHandler}
+        id="all"
+      >
+        All
+      </FilterOption>
+      <FilterOption
+        className={activeFilter === "active" ? "active" : null}
+        onClick={filterHandler}
+        id="active"
+      >
+        Active
+      </FilterOption>
+      <FilterOption
+        className={activeFilter === "completed" ? "active" : null}
+        onClick={filterHandler}
+        id="completed"
+      >
+        Completed
+      </FilterOption>
+    </Filter>
+  );
 };
 
 export default FilterComponent;
